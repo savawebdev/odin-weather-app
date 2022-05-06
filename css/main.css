@@ -1,0 +1,71 @@
+.main {
+  padding-block: 50px;
+}
+
+.main__title {
+  color: var(--clr-blue);
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.main__date-time {
+  color: var(--clr-red);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-left: 2px;
+}
+
+.main__current-weather {
+  color: var(--clr-black);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* HOURLY SECTION */
+
+.hourly {
+  margin-top: 30px;
+}
+
+.hourly__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.hourly__grid {
+  border-top: 2px solid var(--clr-blue);
+  border-bottom: 2px solid var(--clr-blue);
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.hourly__card {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: fit-content;
+  padding-inline: 10px;
+  text-align: center;
+}
+
+.hourly__card:not(:last-child) {
+  border-right: 1px solid var(--clr-blue);
+}
+
+.hourly__time {
+  font-weight: bold;
+}
+
+.hourly__temp {
+  color: var(--clr-red);
+  margin-block: 10px;
+}
+
+.hourly__weather {
+  font-style: italic;
+  margin-top: 10px;
+}

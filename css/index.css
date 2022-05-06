@@ -8,6 +8,9 @@
 /* HEADER */
 @import "./header.css";
 
+/* MAIN */
+@import "./main.css";
+
 /***** CUSTOM PROPERTIES *****/
 :root {
   --clr-black: #0c090d;
@@ -18,3 +21,12 @@
 }
 
 /***** UNIVERSAL STYLES *****/
+body {
+  font-family: "Open-Sans", sans-serif;
+}
+
+.masthead__content,
+.main {
+  margin: auto;
+  max-width: 1200px;
+}
