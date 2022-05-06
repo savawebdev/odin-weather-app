@@ -2,3 +2,61 @@
   background-color: var(--clr-blue);
   height: 100px;
 }
+
+/* MASTHEAD CONTENT */
+.masthead__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+  margin: auto;
+  max-width: 1200px;
+}
+
+/* MASTHEAD TITLE */
+.masthead__title {
+  color: var(--clr-white);
+  font-family: "Open Sans", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  align-self: center;
+}
+
+/* MASTHEAD FORM */
+.masthead__form {
+  align-items: center;
+  display: flex;
+  justify-self: flex-end;
+}
+
+.masthead__form-control > input {
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color: var(--clr-red);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0 10px;
+  width: 300px;
+}
+
+.masthead__form-control > input:focus {
+  outline: none;
+}
+
+.masthead__btn {
+  background-color: var(--clr-red);
+  border: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: var(--clr-white);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100px;
+}
+
+.masthead__form-control > input,
+.masthead__btn {
+  font-family: "Open-Sans", sans-serif;
+  height: 40px;
+}

@@ -12,4 +12,9 @@
 :root {
   --clr-black: #0c090d;
   --clr-blue: #53b3cb;
+  --clr-brown: #c1666b;
+  --clr-red: #ff3864;
+  --clr-white: #fffeff;
 }
+
+/***** UNIVERSAL STYLES *****/
