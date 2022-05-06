@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
+
+/***** CSS FILES IMPORTS *****/
+/*****************************/
+/* RESET CSS */
+@import "./reset.css";
+
+/* HEADER */
+@import "./header.css";
+
+/***** CUSTOM PROPERTIES *****/
+:root {
+  --clr-black: #0c090d;
+  --clr-blue: #53b3cb;
+}
