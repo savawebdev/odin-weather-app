@@ -14,6 +14,9 @@
 /* CURRENT DETAILS */
 @import "./current-details.css";
 
+/* DAILY */
+@import "./daily.css";
+
 /***** CUSTOM PROPERTIES *****/
 :root {
   --clr-black: #0c090d;
@@ -30,7 +33,14 @@ body {
 
 .masthead__content,
 .main,
-.current-details__grid {
+.current-details__grid,
+.daily {
   margin: auto;
   max-width: 1200px;
+}
+
+.hourly__title,
+.daily__title {
+  font-size: 1.2rem;
+  font-weight: bold;
 }

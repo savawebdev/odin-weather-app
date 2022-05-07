@@ -28,11 +28,6 @@
   margin-top: 30px;
 }
 
-.hourly__title {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
 .hourly__grid {
   border-top: 2px solid var(--clr-blue);
   border-bottom: 2px solid var(--clr-blue);

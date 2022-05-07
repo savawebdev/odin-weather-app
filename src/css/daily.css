@@ -1,0 +1,38 @@
+.daily {
+  padding-block: 40px;
+}
+.daily__title {
+  text-align: center;
+}
+
+.daily__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto 0;
+  width: 500px;
+}
+
+.daily__card {
+  align-items: center;
+  display: grid;
+  border-bottom: 1px solid var(--clr-blue);
+  gap: 50px;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  width: 100%;
+}
+
+.daily__date,
+.daily__temp {
+  color: var(--clr-blue);
+  font-weight: bold;
+}
+
+.daily__precipitation-chance {
+  color: var(--clr-red);
+  justify-self: center;
+}
+
+.daily__temp {
+  justify-self: flex-end;
+}

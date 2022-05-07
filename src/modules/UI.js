@@ -84,11 +84,8 @@ function createHourlyCard(time, temp, icon, precipitationChance, description) {
 
 // Display the current weather details
 function displayCurrentDetails(data) {
-  console.log(data);
   const currentDetailsGrid = document.querySelector(".current-details__grid");
   const dataArray = formatCurrentDetailsData(data);
-
-  console.log(dataArray);
 
   dataArray.forEach((el) => {
     const gridElement = createCurrentDetailsCard(el.name, el.data);
@@ -114,9 +111,59 @@ function createCurrentDetailsCard(title, data) {
   return currentDetailsCard;
 }
 
+// Display the daily weather
+function displayDailyWeather(data) {
+  console.log(data);
+  const dailyContent = document.querySelector(".daily__content");
+
+  data.forEach((day) => {
+    const date = new Date(day.dt * 1000).toLocaleDateString("en-GB", {
+      weekday: "short",
+      month: "long",
+      day: "numeric",
+    });
+    const icon = day.weather[0].icon;
+    const pop = day.pop;
+    const temp = [Math.round(day.temp.day), Math.round(day.temp.night)];
+
+    const element = createDailyCard(date, icon, pop, temp);
+    dailyContent.appendChild(element);
+  });
+}
+
+// Creat the daily card to show in daily weather
+function createDailyCard(date, icon, pop, temp) {
+  const dailyCard = document.createElement("div");
+  dailyCard.classList.add("daily__card");
+
+  const dailyDate = document.createElement("span");
+  dailyDate.classList.add("daily__date");
+  dailyDate.textContent = date;
+
+  const dailyIcon = document.createElement("img");
+  dailyIcon.classList.add("daily__icon");
+  dailyIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${icon}@2x.png`
+  );
+
+  const dailyPrecipitationChance = document.createElement("span");
+  dailyPrecipitationChance.classList.add("daily__precipitation-chance");
+  dailyPrecipitationChance.textContent = pop + "%";
+
+  const dailyTemp = document.createElement("span");
+  dailyTemp.classList.add("daily__temp");
+  dailyTemp.innerHTML = `${temp[0]}&deg;C / ${temp[1]}&deg;C`;
+
+  dailyCard.append(dailyDate, dailyIcon, dailyPrecipitationChance, dailyTemp);
+
+  return dailyCard;
+}
+
 export {
   displayLocation,
   displayWeatherSummary,
   displayHourlyWeather,
   displayCurrentDetails,
+  displayDailyWeather,
 };
