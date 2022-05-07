@@ -151,7 +151,7 @@ function createDailyCard(date, icon, pop, temp) {
 
   const dailyPrecipitationChance = document.createElement("span");
   dailyPrecipitationChance.classList.add("daily__precipitation-chance");
-  dailyPrecipitationChance.textContent = pop * 100 + "%";
+  dailyPrecipitationChance.textContent = Math.round(pop * 100) + "%";
 
   const dailyTemp = document.createElement("span");
   dailyTemp.classList.add("daily__temp");
