@@ -1,4 +1,7 @@
-import { loadCurrentLocationWeather } from "./modules/current-location";
+import {
+  loadCurrentLocationWeather,
+  loadHourlyWeather,
+} from "./modules/load-data";
 import { getWeather } from "./modules/weather";
 import "./css/index.css";
 

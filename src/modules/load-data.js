@@ -9,4 +9,6 @@ function loadCurrentLocationWeather(lat, long, data) {
   displayWeatherSummary(data);
 }
 
-export { loadCurrentLocationWeather };
+function loadHourlyWeather(data) {}
+
+export { loadCurrentLocationWeather, loadHourlyWeather };
