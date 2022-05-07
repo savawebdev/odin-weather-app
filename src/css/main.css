@@ -10,9 +10,11 @@
 
 .main__date-time {
   color: var(--clr-red);
+  display: inline-block;
   font-size: 0.9rem;
   font-style: italic;
   margin-left: 2px;
+  margin-top: 5px;
 }
 
 .main__current-weather {

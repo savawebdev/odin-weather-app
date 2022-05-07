@@ -17,6 +17,9 @@
 /* DAILY */
 @import "./daily.css";
 
+/* FOOTER */
+@import "./footer.css";
+
 /***** CUSTOM PROPERTIES *****/
 :root {
   --clr-black: #0c090d;

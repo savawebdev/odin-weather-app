@@ -4,7 +4,7 @@ import { formatDate, formatCurrentDetailsData } from "./helpers";
 function displayLocation(location) {
   const mainTitle = document.querySelector(".main__title");
 
-  mainTitle.textContent = location.region;
+  mainTitle.textContent = `${location.city}, ${location.country}`;
 }
 
 // Display the weather summary below the city name
@@ -23,13 +23,14 @@ function displayWeatherSummary(data) {
 // Display the hourly weather
 function displayHourlyWeather(data) {
   const hourlyGrid = document.querySelector(".hourly__grid");
+  hourlyGrid.innerHTML = "";
 
   data.forEach((el, i) => {
     const date = new Date(el.dt * 1000);
     const time = i === 0 ? "now" : date.getHours();
     const temp = Math.round(el.temp);
     const icon = el.weather[0].icon;
-    const precipitationChance = el.pop;
+    const precipitationChance = el.pop * 100;
     const description = el.weather[0].description;
 
     const gridElement = createHourlyCard(
@@ -85,6 +86,7 @@ function createHourlyCard(time, temp, icon, precipitationChance, description) {
 // Display the current weather details
 function displayCurrentDetails(data) {
   const currentDetailsGrid = document.querySelector(".current-details__grid");
+  currentDetailsGrid.innerHTML = "";
   const dataArray = formatCurrentDetailsData(data);
 
   dataArray.forEach((el) => {
@@ -113,8 +115,8 @@ function createCurrentDetailsCard(title, data) {
 
 // Display the daily weather
 function displayDailyWeather(data) {
-  console.log(data);
   const dailyContent = document.querySelector(".daily__content");
+  dailyContent.innerHTML = "";
 
   data.forEach((day) => {
     const date = new Date(day.dt * 1000).toLocaleDateString("en-GB", {
@@ -149,7 +151,7 @@ function createDailyCard(date, icon, pop, temp) {
 
   const dailyPrecipitationChance = document.createElement("span");
   dailyPrecipitationChance.classList.add("daily__precipitation-chance");
-  dailyPrecipitationChance.textContent = pop + "%";
+  dailyPrecipitationChance.textContent = pop * 100 + "%";
 
   const dailyTemp = document.createElement("span");
   dailyTemp.classList.add("daily__temp");

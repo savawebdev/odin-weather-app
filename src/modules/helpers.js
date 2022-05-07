@@ -19,8 +19,21 @@ function formatDate(date) {
 function formatCurrentDetailsData(data) {
   const sunrise = new Date(data.sunrise * 1000);
   const sunset = new Date(data.sunset * 1000);
-  const sunriseTime = sunrise.toLocaleTimeString("en-GB");
-  const sunsetTime = sunset.toLocaleTimeString("en-GB");
+
+  const sunriseHour =
+    sunrise.getHours() < 10 ? "0" + sunrise.getHours() : sunrise.getHours();
+  const sunriseMinute =
+    sunrise.getMinutes() < 10
+      ? "0" + sunrise.getMinutes()
+      : sunrise.getMinutes();
+
+  const sunsetHour =
+    sunset.getHours() < 10 ? "0" + sunset.getHours() : sunset.getHours();
+  const sunsetMinute =
+    sunset.getMinutes() < 10 ? "0" + sunset.getMinutes() : sunset.getMinutes();
+
+  const sunriseTime = `${sunriseHour}:${sunriseMinute}`;
+  const sunsetTime = `${sunsetHour}:${sunsetMinute}`;
 
   const dataArray = [
     {

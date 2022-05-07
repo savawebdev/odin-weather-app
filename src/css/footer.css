@@ -1,0 +1,29 @@
+.footer {
+  align-items: center;
+  background-color: var(--clr-blue);
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: center;
+}
+
+.footer__copyright,
+.footer__credits {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.footer__credits {
+  color: var(--clr-white);
+  margin-top: 10px;
+}
+
+.footer__credits a {
+  color: var(--clr-red);
+  text-decoration: none;
+  transition: opacity 0.2s ease-in;
+}
+
+.footer__credits a:hover {
+  opacity: 0.7;
+}
