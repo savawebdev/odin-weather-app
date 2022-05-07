@@ -1,5 +1,5 @@
 import { displayLocation, displayWeatherSummary } from "./UI";
-import { getLocation } from "./location";
+import { getLocation } from "./fetch-data";
 
 function loadCurrentLocationWeather(lat, long, data) {
   getLocation(lat, long).then((location) => {

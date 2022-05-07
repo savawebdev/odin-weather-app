@@ -2,7 +2,7 @@ import {
   loadCurrentLocationWeather,
   loadHourlyWeather,
 } from "./modules/load-data";
-import { getWeather } from "./modules/weather";
+import { getWeather } from "./modules/fetch-data";
 import "./css/index.css";
 
 navigator.geolocation.getCurrentPosition((pos) => {
