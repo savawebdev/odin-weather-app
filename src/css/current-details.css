@@ -1,0 +1,33 @@
+.current-details {
+  align-items: center;
+  background-color: var(--clr-blue);
+  display: flex;
+  height: 200px;
+}
+
+.current-details__grid {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  justify-items: center;
+}
+
+.current-details__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.current-details__title {
+  color: var(--clr-black);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.current-details__data {
+  color: var(--clr-white);
+  font-size: 1.1rem;
+  font-weight: bold;
+}

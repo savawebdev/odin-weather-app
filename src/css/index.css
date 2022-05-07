@@ -11,6 +11,9 @@
 /* MAIN */
 @import "./main.css";
 
+/* CURRENT DETAILS */
+@import "./current-details.css";
+
 /***** CUSTOM PROPERTIES *****/
 :root {
   --clr-black: #0c090d;
@@ -26,7 +29,8 @@ body {
 }
 
 .masthead__content,
-.main {
+.main,
+.current-details__grid {
   margin: auto;
   max-width: 1200px;
 }

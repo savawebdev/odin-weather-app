@@ -2,6 +2,7 @@ import {
   displayLocation,
   displayWeatherSummary,
   displayHourlyWeather,
+  displayCurrentDetails,
 } from "./UI";
 import { getLocation } from "./fetch-data";
 
@@ -17,4 +18,8 @@ function loadHourlyWeather(data) {
   displayHourlyWeather(data.slice(0, 10));
 }
 
-export { loadCurrentLocationWeather, loadHourlyWeather };
+function loadCurrentDetails(data) {
+  displayCurrentDetails(data);
+}
+
+export { loadCurrentLocationWeather, loadHourlyWeather, loadCurrentDetails };
