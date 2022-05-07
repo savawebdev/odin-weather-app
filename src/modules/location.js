@@ -1,3 +1,6 @@
+import { displayLocation, displayWeatherSummary } from "./UI";
+import { getWeather } from "./weather";
+
 async function getLocation(lat, long) {
   const API_KEY = "27789636179621174688x78507";
 
@@ -10,6 +13,21 @@ async function getLocation(lat, long) {
   return data;
 }
 
-module.exports = {
-  getLocation,
-};
+function loadCurrentLocationWeather() {
+  navigator.geolocation.getCurrentPosition((pos) => {
+    const lat = pos.coords.latitude;
+    const long = pos.coords.longitude;
+
+    getLocation(lat, long).then((location) => {
+      // console.log(location);
+      displayLocation(location);
+    });
+
+    getWeather(lat, long).then((weather) => {
+      console.log(weather.current);
+      displayWeatherSummary(weather.current);
+    });
+  });
+}
+
+export { loadCurrentLocationWeather };
