@@ -11,5 +11,6 @@ navigator.geolocation.getCurrentPosition((pos) => {
 
   getWeather(lat, long).then((data) => {
     loadCurrentLocationWeather(lat, long, data.current);
+    loadHourlyWeather(data.hourly);
   });
 });

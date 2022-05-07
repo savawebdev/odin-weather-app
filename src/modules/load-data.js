@@ -1,4 +1,8 @@
-import { displayLocation, displayWeatherSummary } from "./UI";
+import {
+  displayLocation,
+  displayWeatherSummary,
+  displayHourlyWeather,
+} from "./UI";
 import { getLocation } from "./fetch-data";
 
 function loadCurrentLocationWeather(lat, long, data) {
@@ -9,6 +13,8 @@ function loadCurrentLocationWeather(lat, long, data) {
   displayWeatherSummary(data);
 }
 
-function loadHourlyWeather(data) {}
+function loadHourlyWeather(data) {
+  displayHourlyWeather(data.slice(0, 10));
+}
 
 export { loadCurrentLocationWeather, loadHourlyWeather };
