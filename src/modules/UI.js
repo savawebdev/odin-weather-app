@@ -18,4 +18,21 @@ function displayWeatherSummary(weather) {
   mainCurrentWeather.innerHTML = `${description} - ${temp}&deg; C`;
 }
 
-export { displayLocation, displayWeatherSummary };
+function createHourlyCard() {
+  const hourlyCard = document.createElement("div");
+  hourlyCard.classList.add("hourly__card");
+
+  const hourlyTime = document.createElement("span");
+  hourlyTime.classList.add("hourly__time");
+
+  const hourlyTemp = document.createElement("span");
+  hourlyTemp.classList.add("hourly__temp");
+
+  const hourlyIcon = document.createElement("img");
+  hourlyIcon.classList.add("hourly__icon");
+
+  const hourlyDescription = document.createElement("span");
+  hourlyDescription.classList.add("hourly__description");
+}
+
+export { displayLocation, displayWeatherSummary, createHourlyCard };
