@@ -65,6 +65,10 @@
   margin-block: 10px;
 }
 
+.hourly__precipitation-chance {
+  color: var(--clr-blue);
+}
+
 .hourly__description {
   font-style: italic;
   margin-top: 10px;

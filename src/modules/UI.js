@@ -20,7 +20,6 @@ function displayWeatherSummary(data) {
 
 function displayHourlyWeather(data) {
   const hourlyGrid = document.querySelector(".hourly__grid");
-
   console.log(data);
 
   data.forEach((el, i) => {
@@ -28,14 +27,21 @@ function displayHourlyWeather(data) {
     const time = i === 0 ? "now" : date.getHours();
     const temp = Math.round(el.temp);
     const icon = el.weather[0].icon;
+    const precipitationChance = el.pop;
     const description = el.weather[0].description;
 
-    const gridElement = createHourlyCard(time, temp, icon, description);
+    const gridElement = createHourlyCard(
+      time,
+      temp,
+      icon,
+      precipitationChance,
+      description
+    );
     hourlyGrid.appendChild(gridElement);
   });
 }
 
-function createHourlyCard(time, temp, icon, description) {
+function createHourlyCard(time, temp, icon, precipitationChance, description) {
   const hourlyCard = document.createElement("div");
   hourlyCard.classList.add("hourly__card");
 
@@ -54,11 +60,21 @@ function createHourlyCard(time, temp, icon, description) {
     `http://openweathermap.org/img/wn/${icon}@2x.png`
   );
 
+  const hourlyPrecipitationChance = document.createElement("span");
+  hourlyPrecipitationChance.classList.add("hourly__precipitation-chance");
+  hourlyPrecipitationChance.textContent = `${precipitationChance}%`;
+
   const hourlyDescription = document.createElement("span");
   hourlyDescription.classList.add("hourly__description");
   hourlyDescription.textContent = description;
 
-  hourlyCard.append(hourlyTime, hourlyTemp, hourlyIcon, hourlyDescription);
+  hourlyCard.append(
+    hourlyTime,
+    hourlyTemp,
+    hourlyIcon,
+    hourlyPrecipitationChance,
+    hourlyDescription
+  );
 
   return hourlyCard;
 }
