@@ -18,3 +18,7 @@ Weather forecasting App created for The Odin Project course.
 
 - Make it responsive
 - Implement a better location search with support for multiple locations with the same name
+
+## Live Version
+
+- [Click Here](https://savawebdev.github.io/odin-weather-app/)
